@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  output: 'standalone',
   images: {
     unoptimized: true,
     remotePatterns: [
@@ -10,8 +10,6 @@ const nextConfig = {
       },
     ],
   },
-  basePath: process.env.NEXT_PUBLIC_BASE_PATH || '',
-  trailingSlash: true,
 }
 
 export default nextConfig 
