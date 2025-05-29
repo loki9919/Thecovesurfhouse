@@ -1,10 +1,6 @@
 name: Build and Deploy
 
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+on: {}
 
 env:
   REGISTRY: ghcr.io
@@ -20,6 +16,9 @@ jobs:
       id-token: write
 
     steps:
+      - name: This workflow is disabled
+        run: echo "This workflow is intentionally disabled."
+
       - name: Checkout repository
         uses: actions/checkout@v4
 
