@@ -1,4 +1,10 @@
 import Image from 'next/image'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'The Cove Surf House',
+  description: 'Your perfect surf getaway destination',
+}
 
 export default function Home() {
   return (
@@ -7,7 +13,7 @@ export default function Home() {
       <section className="relative h-screen">
         <div className="absolute inset-0">
           <Image
-            src="/hero-bg.jpg"
+            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80"
             alt="The Cove Surf House"
             fill
             className="object-cover"
@@ -41,7 +47,7 @@ export default function Home() {
             </div>
             <div className="relative h-[400px]">
               <Image
-                src="/about-image.jpg"
+                src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
                 alt="Surf House View"
                 fill
                 className="object-cover rounded-lg"

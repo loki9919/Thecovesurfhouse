@@ -7,6 +7,7 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'The Cove Surf House',
   description: 'Your perfect surf getaway destination',
+  viewport: 'width=device-width, initial-scale=1',
 }
 
 export default function RootLayout({
