@@ -10,6 +10,10 @@ permissions:
   pages: write
   id-token: write
 
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -24,13 +28,19 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
+        run: |
+          npm install
+          npm install -D @types/node @types/react @types/react-dom typescript
 
       - name: Build
         run: npm run build
+        env:
+          NEXT_PUBLIC_BASE_PATH: '/Thecovesurfhouse'
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
+        with:
+          static_site_generator: next
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
